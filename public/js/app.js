@@ -27,6 +27,7 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
   console.log('BlogController loaded');
   $scope.allBlogPosts = [];
   $scope.newPost = {};
+  $scope.editorEnabled = false;
   $scope.getAll = function() {
     $http
       .get('/api/blog')
@@ -43,19 +44,36 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
         $scope.newPost = {};
       });
   };
-  $scope.editPost = function() {
+  $scope.editPost = function(post) {
     $http
-      .put('/api/blog/:id', post)
+      .put('/api/blog/' + post._id, post)
       .then(function(err) {
         if (err) console.log('error editing post');
       });
   };
-  $scope.deletePost = function() {
+  $scope.deletePost = function(post) {
     $http
-      .delete('/api/blog/:id', post)
+      .delete('/api/blog/' + post._id, post)
       .then(function(err) {
         if (err) console.log('error deleting post');
+        var index = $scope.allBlogPosts.indexOf(post);
+        $scope.allBlogPosts.splice(index, 1);
       });
+  };
+  $scope.enableEditor = function() {
+    $scope.editorEnabled = true;
+    $scope.editableBandMember = $scope.bandMember;
+    $scope.editableContent = $scope.content;
+  };
+
+  $scope.disableEditor = function() {
+    $scope.editorEnabled = false;
+  };
+
+  $scope.save = function() {
+    $scope.bandMember = $scope.editableBandMember;
+    $scope.content = $scope.editableContent;
+    $scope.disableEditor();
   };
   $scope.getAll();
 }]);

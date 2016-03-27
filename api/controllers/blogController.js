@@ -29,9 +29,10 @@ var blogController = {
   },
   delete: function(req, res) {
     var id = req.params.id;
-    Blog.findByIdAndRemove(id, function(err){
+    Blog.findByIdAndRemove(id, function(err, post){
       if (err) console.log(err);
       console.log('post deleted');
+      res.json(post);
     });
   }
 };

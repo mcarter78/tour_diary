@@ -1,19 +1,25 @@
 <div id="add-post">
   <form ng-submit="addPost()">
-    <div>
-      <input type="text" ng-model="newPost.bandMember" placeholder="Name">
-    </div>
-    <div>
-      <textarea ng-model="newPost.content"></textarea>
-    </div>
-    <div>
-      <button type="submit">Add Post</button>
-    </div>
+    <div><input type="text" ng-model="newPost.bandMember" placeholder="Name"></div>
+    <div><textarea ng-model="newPost.content"></textarea></div>
+    <div><button type="submit">Add Post</button></div>
   </form>
 </div>
 <div id="post-list">
   <div ng-repeat="post in allBlogPosts">
-    <h4>{{ post.bandMember }} - {{ post.date | date }}</h4>
-    <p>{{ post.content}}</p>
+    <div id="post" ng-hide="editorEnabled">
+      <p><strong>{{ post.bandMember }}</strong> - {{ post.date | date }}</p>
+      <p>{{ post.content }}</p>
+      <button ng-click="enableEditor()">Edit Post</button>
+      <button ng-click="deletePost(post)">Delete Post</button>
+    </div>
+
+    <div ng-show="editorEnabled">
+      <p><strong>{{ post.bandMember }}</strong> - {{ post.date | date }}</p>
+      <form ng-submit="editPost(post)">
+        <div><textarea ng-model="editableContent" ng-show="editorEnabled" placeholder="{{ post.content }}"></textarea></div>
+        <div><button type="submit" ng-click="save()">Save</button><button ng-click="disableEditor()">Cancel</button><div>
+      </form>
+    </div>
   </div>
 </div>
