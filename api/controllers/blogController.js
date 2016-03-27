@@ -2,8 +2,10 @@ var Blog = require('../models/blog');
 
 var blogController = {
   index: function(req, res) {
+    console.log('indexing');
     Blog.find({}, function(err, posts) {
       if (err) console.log(err);
+      console.log(posts);
       res.json(posts);
     });
   },
@@ -11,6 +13,7 @@ var blogController = {
     var newPost = req.body;
     Blog.create(newPost, function(err, post) {
       console.log('post created:', post);
+      res.json(post);
     });
   },
   update: function(req, res) {

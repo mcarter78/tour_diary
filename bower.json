@@ -1,0 +1,16 @@
+{
+  "name": "tour_diary",
+  "homepage": "https://github.com/mcarter78/tour_diary",
+  "authors": [
+    "mcarter78 <sjsharksftw@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "angular-ui-router": "^0.2.18"
+  }
+}

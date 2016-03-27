@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="tourDiary">
+  <head>
+    <title>Tour Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header class="navbar navbar-nav navbar-fixed-top">
+      <div class="container">
+        <ul class="nav nav-tabs">
+        </ul>
+      </div>
+    </header>
+
+    <div class="row container" id="main-content">
+      <div class="well col-md-10 col-md-offset-1" id="comic-well">
+        <div ui-view></div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
