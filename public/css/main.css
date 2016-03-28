@@ -1,0 +1,41 @@
+li {
+  display: inline;
+}
+
+.navbar {
+  margin-top: 10px;
+}
+
+.nav {
+  float: right;
+}
+
+#main-content {
+  padding-top: 70px;
+}
+
+#post {
+  margin: 20px 10px;
+}
+
+#add-post-btn,
+#add-show-btn {
+  margin-left: 10px;
+}
+
+.form-control {
+  margin: 10px;
+  width: 60%;
+}
+
+textarea.form-control {
+  height: 140px;
+}
+
+.edit-form button {
+  margin-left: 10px;
+}
+
+h2 {
+  margin-bottom: 30px;
+}

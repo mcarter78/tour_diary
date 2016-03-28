@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 var ShowSchema = new Schema({
   date: Date,
+  price: String,
   address: String,
   details: String,
   comments: [CommentSchema]

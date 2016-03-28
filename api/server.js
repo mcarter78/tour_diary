@@ -23,10 +23,16 @@ var commentsController = require('./controllers/commentsController');
 // blog routes
 app.get('/api/blog', blogController.index);
 app.post('/api/blog', blogController.create);
-
+app.get('/api/blog/:id', blogController.show);
 app.put('/api/blog/:id', blogController.update);
 app.delete('/api/blog/:id', blogController.delete);
 
+// show routes
+app.get('/api/shows', showsController.index);
+app.post('/api/shows', showsController.create);
+app.get('/api/shows/:id', showsController.show);
+app.put('/api/shows/:id', showsController.update);
+app.delete('/api/shows/:id', showsController.delete);
 
 // // blog comment routes
 // app.route('/api/blog/:id/comments')
@@ -35,16 +41,6 @@ app.delete('/api/blog/:id', blogController.delete);
 // app.route('/api/blog/:id/comments/:id')
 //   .put(commentsController.blogCommentsController.update)
 //   .delete(commentsController.blogCommentsController.delete);
-//
-// // show routes
-// app.route('/api/shows')
-//   .get(showsController.index)
-//   .post(showsController.create);
-//
-// app.route('/api/shows/:id')
-//   .get(showsController.show)
-//   .put(showsController.update)
-//   .delete(showsController.delete);
 //
 // // show comment routes
 // app.route('/api/shows/:id/comments')

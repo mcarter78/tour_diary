@@ -3,17 +3,21 @@
   <head>
     <title>Tour Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
     <header class="navbar navbar-nav navbar-fixed-top">
       <div class="container">
         <ul class="nav nav-tabs">
+          <a ng-href="/"><li>Tour Diary</li></a> |
+          <a ng-href='/shows'><li>Shows</li></a>
         </ul>
       </div>
     </header>
 
     <div class="row container" id="main-content">
-      <div class="well col-md-10 col-md-offset-1" id="comic-well">
+      <div class="well col-md-10 col-md-offset-1">
         <div ui-view></div>
       </div>
     </div>
@@ -22,5 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/BlogController.js"></script>
+    <script src="js/ShowsController.js"></script>
   </body>
 </html>

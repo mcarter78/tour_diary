@@ -5,8 +5,15 @@ var blogController = {
     console.log('indexing');
     Blog.find({}, function(err, posts) {
       if (err) console.log(err);
-      console.log(posts);
       res.json(posts);
+    });
+  },
+  show: function(req, res) {
+    console.log('showing', req);
+    var id = req.params.id;
+    Blog.findById(id, function(err, post) {
+      if (err) console.log(err);
+      res.json(post);
     });
   },
   create: function(req, res) {

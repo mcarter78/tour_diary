@@ -18,6 +18,7 @@ var showsController = {
     var newShow = req.body;
     Show.create(newShow, function(err, show) {
       console.log('show created:', show);
+      res.json(show);
     });
   },
   update: function(req, res) {
@@ -33,9 +34,10 @@ var showsController = {
   },
   delete: function(req, res) {
     var id = req.params.id;
-    Show.findByIdAndRemove(id, function(err){
+    Show.findByIdAndRemove(id, function(err, show){
       if (err) console.log(err);
       console.log('show deleted');
+      res.json(show);
     });
   }
 };
